@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at center, #0f0f0f 0%, #000000 100%);
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: #39ff14;
+}
+
+h1 {
+    color: #00fff7;
+    margin: 2rem 0;
+    font-size: 3rem;
+    text-shadow: 0 0 20px #00fff7;
+}
+
+.container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+    animation: fadeIn 0.5s ease;
+}
+
+.box {
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1vh;
+    border: none;
+    font-size: 13vmin;
+    background-color: #121212;
+    color: #39ff14;
+    transition: transform 0.2s ease, background-color 0.3s;
+    animation: pop 0.3s ease;
+    box-shadow: 0 0 10px #39ff14, inset 0 0 10px #39ff14;
+}
+
+.box:hover {
+    cursor: pointer;
+    background-color: #1f1f1f;
+    transform: scale(1.05);
+}
+
+.reset-btn,
+#new-btn {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    background-color: #0d0d0d;
+    color: #00fff7;
+    border: 2px solid #00fff7;
+    border-radius: 1rem;
+    margin: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 0 15px #00fff7;
+}
+
+.reset-btn:hover,
+#new-btn:hover {
+    background-color: #00fff7;
+    color: #000;
+    cursor: pointer;
+}
+
+#msg {
+    color: #ff00ff;
+    font-size: 5vmin;
+    text-align: center;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+.msg-container {
+    height: 100vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+    animation: slideIn 0.6s ease;
+}
+
+.hide {
+    display: none;
+}
+
+/* Animations */
+@keyframes pop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    80% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #fff; }
+    50% { box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff; }
+    100% { box-shadow: 0 0 5px #fff; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+    
